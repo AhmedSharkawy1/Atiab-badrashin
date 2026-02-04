@@ -116,12 +116,12 @@ const MenuSection: React.FC<Props> = ({
                         : ''}`}
                     >
                       {item.labels && item.labels[pIdx] ? (
-                        <span className={`${hasManyPrices ? 'text-[9px] text-zinc-500 dark:text-zinc-500' : 'text-[8px] text-zinc-400 dark:text-zinc-600'} font-black uppercase tracking-tighter`}>
+                        <span className="text-[10px] text-zinc-500 dark:text-zinc-400 font-black uppercase tracking-tighter mb-0.5">
                           {item.labels[pIdx]}
                         </span>
                       ) : (
                         section.subtitles && section.subtitles[pIdx] && (
-                           <span className={`${hasManyPrices ? 'text-[9px] text-zinc-500 dark:text-zinc-500' : 'text-[8px] text-zinc-400 dark:text-zinc-600'} font-black uppercase tracking-tighter`}>
+                           <span className="text-[10px] text-zinc-500 dark:text-zinc-400 font-black uppercase tracking-tighter mb-0.5">
                             {section.subtitles[pIdx]}
                            </span>
                         )

@@ -35,9 +35,11 @@ const App: React.FC = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [passInput, setPassInput] = useState("");
   
-  // التهيئة الأولية من LocalStorage لسرعة التحميل، ثم التحديث من Firebase
+  // التهيئة الأولية من LocalStorage لسرعة التحميل (مفتاح v2)، ثم التحديث من Firebase
   const [menuData, setMenuData] = useState<MenuSectionType[]>(() => {
-    const saved = localStorage.getItem('atyab_menu_data');
+    const saved = localStorage.getItem('atyab_menu_data_v2');
+    // تنظيف النسخة القديمة إن وجدت
+    localStorage.removeItem('atyab_menu_data');
     return saved ? JSON.parse(saved) : MENU_DATA;
   });
 
@@ -68,8 +70,7 @@ const App: React.FC = () => {
       const data = snapshot.val();
       if (data) {
         setMenuData(data);
-        // تحديث النسخة المحلية أيضاً لتعمل كنسخة احتياطية
-        localStorage.setItem('atyab_menu_data', JSON.stringify(data));
+        localStorage.setItem('atyab_menu_data_v2', JSON.stringify(data));
       }
     });
 
@@ -202,7 +203,7 @@ const App: React.FC = () => {
   };
 
   const saveMenuChanges = () => {
-    // Save to Firebase
+    // Save to Firebase (v2)
     const menuRef = ref(db, MENU_DB_KEY);
     set(menuRef, menuData)
       .then(() => {
