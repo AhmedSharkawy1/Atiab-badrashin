@@ -19,4 +19,4 @@ const app = initializeApp(firebaseConfig);
 export const db = getDatabase(app);
 
 // هذا المفتاح خاص بمنيو أطياب فقط لضمان عدم تداخل البيانات مع المنيوهات الأخرى
-export const MENU_DB_KEY = 'atyab_menu_data_v2';
+export const MENU_DB_KEY = 'atyab_menu_data_v3';
