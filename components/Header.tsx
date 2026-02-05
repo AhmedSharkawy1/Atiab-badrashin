@@ -17,8 +17,8 @@ const AtyabLogo = ({ size = "w-16 h-16" }: { size?: string }) => (
 const Header: React.FC<Props> = ({ isDark, onToggleTheme, onAction }) => {
   const [showCallMenu, setShowCallMenu] = useState(false);
   const phoneNumbers = [
-    { label: "رقم 1", number: "01044168230", color: "#eab308" },
-    { label: "رقم 2", number: "01124005181", color: "#eab308" }
+    { label: "رقم 1", number: "01124005181", color: "#eab308" },
+    { label: "رقم 2", number: "01044168230", color: "#eab308" }
   ];
 
   const handleCallClick = () => {

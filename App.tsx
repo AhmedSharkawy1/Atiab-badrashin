@@ -379,7 +379,7 @@ const App: React.FC = () => {
                   <span className="text-[8px] font-black text-zinc-400 uppercase tracking-widest">تواصل</span>
                   <span className="text-lg">📞</span>
                </div>
-               {[{n: "01044168230", l: "رقم 1"}, {n: "01124005181", l: "رقم 2"}].map((p, i) => (
+               {[{n: "01124005181", l: "رقم 1"}, {n: "01044168230", l: "رقم 2"}].map((p, i) => (
                  <a key={i} href={`tel:${p.n}`} className="flex items-center justify-between px-6 py-4 border-b last:border-0 border-zinc-100 dark:border-white/5 active:bg-yellow-50 transition-colors"><span className="text-[9px] font-black text-zinc-400">{p.l}</span><span className="text-base font-black tabular-nums text-yellow-600">{p.n}</span></a>
                ))}
              </div>
