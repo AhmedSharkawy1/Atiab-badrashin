@@ -55,6 +55,8 @@ export const MENU_DATA: MenuSection[] = [
     emoji: '🍯',
     image: 'https://8upload.com/image/7e941e36d4afa120/WhatsApp-Image-2022-10-19-at-3.30.52-PM-500x375.jpeg',
     items: [
+      { name: 'شوكلاتة', prices: ['25'] },
+      { name: 'لوتس', prices: ['25'] },
       { name: 'قشطة', prices: ['15'] },
       { name: 'مكسرات', prices: ['10'] },
       { name: 'لبن', prices: ['10'] },
@@ -76,6 +78,8 @@ export const MENU_DATA: MenuSection[] = [
       { name: 'هوت دوج', description: 'هوت دوج - خضار - موزاريلا', prices: ['85', '120'] },
       { name: 'سلامي', description: 'خضار - موزاريلا - سلامي', prices: ['100', '140'] },
       { name: 'مشروم', description: 'خضار - موزاريلا - مشروم', prices: ['80', '115'] },
+      { name: 'مارجريتا', description: 'جبنة رومى - جبنة موزاريلا', prices: ['75', '95'] },
+      { name: 'خضروات', description: 'خضار - موزاريلا - رومى', prices: ['75', '95'] },
       { name: 'سوبر سوبريم', description: 'سلامى - هوت دوج - خضار - موزاريلا', prices: ['115', '145'], isPopular: true },
       { name: 'ميكس لحوم', description: 'لحمة - سجق - بسطرمة - خضار - موزاريلا', prices: ['120', '160'], isPopular: true },
       { name: 'ميكس فراخ', description: 'شاورما فراخ - زنجر - خضار - موزاريلا', prices: ['120', '145'], isSpicy: true },
