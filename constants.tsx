@@ -23,7 +23,7 @@ export const MENU_DATA: MenuSection[] = [
       { name: 'سوبر سوبريم', description: 'سلامى - هوت دوج - خضار - موزاريلا', prices: ['115', '145'], isPopular: true },
       { name: 'ميكس لحوم', description: 'لحمة - سجق - بسطرمة - خضار - موزاريلا', prices: ['120', '160'], isPopular: true },
       { name: 'ميكس فراخ', description: 'شاورما فراخ - زنجر - خضار - موزاريلا', prices: ['120', '160'], isSpicy: true },
-      { name: 'ميكس جبن', description: 'جبنة رومى - جبنة شيدر - بيبيرونى - خضار - موزاريلا', prices: ['115', '145'] },
+      { name: 'ميكس جبن', description: 'جبنة رومى - جبنة شيدر - بريزيدون - خضار - موزاريلا', prices: ['115', '145'] },
     ]
   },
   {
@@ -85,7 +85,7 @@ export const MENU_DATA: MenuSection[] = [
       { name: 'سوبر سوبريم', description: 'سلامى - هوت دوج - خضار - موزاريلا', prices: ['115', '145'], isPopular: true },
       { name: 'ميكس لحوم', description: 'لحمة - سجق - بسطرمة - خضار - موزاريلا', prices: ['120', '160'], isPopular: true },
       { name: 'ميكس فراخ', description: 'شاورما فراخ - زنجر - خضار - موزاريلا', prices: ['120', '160'], isSpicy: true },
-      { name: 'ميكس جبن', description: 'جبنة رومى - جبنة شيدر - بيبيرونى - خضار - موزاريلا', prices: ['115', '145'] },
+      { name: 'ميكس جبن', description: 'جبنة رومى - جبنة شيدر - بريزيدون - خضار - موزاريلا', prices: ['115', '145'] },
     ]
   },
   {
@@ -111,7 +111,7 @@ export const MENU_DATA: MenuSection[] = [
       { name: 'سوبر سوبريم', description: 'موزاريلا - سلامى - هوت دوج - خضار', prices: ['80', '115', '145'], isPopular: true },
       { name: 'ميكس لحوم', description: 'موزاريلا - لحمة - سجق - بسطرمة - خضار', prices: ['85', '120', '160'], isPopular: true },
       { name: 'ميكس فراخ', description: 'موزاريلا - شاورما فراخ - زنجر - خضار', prices: ['85', '120', '160'], isSpicy: true },
-      { name: 'ميكس جبن', description: 'موزاريلا - جبنة رومى - جبنة شيدر - بيبيرونى - خضار', prices: ['75', '115', '145'] },
+      { name: 'ميكس جبن', description: 'موزاريلا - جبنة رومى - جبنة شيدر - بريزيدون - خضار', prices: ['75', '115', '145'] },
     ]
   },
   {
