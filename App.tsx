@@ -35,9 +35,9 @@ const App: React.FC = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [passInput, setPassInput] = useState("");
   
-  // التهيئة الأولية من LocalStorage لسرعة التحميل (مفتاح v11)، ثم التحديث من Firebase
+  // التهيئة الأولية من LocalStorage لسرعة التحميل (مفتاح v14)، ثم التحديث من Firebase
   const [menuData, setMenuData] = useState<MenuSectionType[]>(() => {
-    const saved = localStorage.getItem('atyab_menu_data_v11');
+    const saved = localStorage.getItem('atyab_menu_data_v14');
     // تنظيف النسخ القديمة
     localStorage.removeItem('atyab_menu_data');
     localStorage.removeItem('atyab_menu_data_v2');
@@ -49,6 +49,9 @@ const App: React.FC = () => {
     localStorage.removeItem('atyab_menu_data_v8');
     localStorage.removeItem('atyab_menu_data_v9');
     localStorage.removeItem('atyab_menu_data_v10');
+    localStorage.removeItem('atyab_menu_data_v11');
+    localStorage.removeItem('atyab_menu_data_v12');
+    localStorage.removeItem('atyab_menu_data_v13');
     return saved ? JSON.parse(saved) : MENU_DATA;
   });
 
@@ -79,7 +82,7 @@ const App: React.FC = () => {
       const data = snapshot.val();
       if (data) {
         setMenuData(data);
-        localStorage.setItem('atyab_menu_data_v11', JSON.stringify(data));
+        localStorage.setItem('atyab_menu_data_v14', JSON.stringify(data));
       } else {
         // إذا كانت قاعدة البيانات فارغة (مفتاح جديد)، قم برفع البيانات المحلية الحالية
         // هذا يضمن تحديث القاعدة بالأصناف والأسعار الجديدة تلقائياً

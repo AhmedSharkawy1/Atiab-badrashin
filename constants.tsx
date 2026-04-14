@@ -34,7 +34,7 @@ export const MENU_DATA: MenuSection[] = [
     subtitles: ['صغير', 'وسط', 'كبير'],
     items: [
       { name: 'فطير سادة بالسكر', description: 'سمن - سكر', prices: ['20', '30', '40'] },
-      { name: 'فطير بقشطة سكر ولبن', description: 'سمن - سكر - لبن', prices: ['-', '30', '40'] },
+      { name: 'فطير بغاشة سكر ولبن', description: 'سمن - سكر - لبن', prices: ['-', '30', '40'] },
       { name: 'فطير بالكريمة', description: 'سمن - كريمة - سكر - لبن', prices: ['35', '45', '60'] },
       { name: 'فطير بالبسبوسة', description: 'بسبوسة - كريمة - سكر - لبن', prices: ['45', '55', '75'] },
       { name: 'فطير بالكنافة', description: 'كنافة - كريمة - سكر - لبن', prices: ['45', '55', '75'] },
