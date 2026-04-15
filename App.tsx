@@ -26,8 +26,10 @@ const MenuIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
 
 const App: React.FC = () => {
   const [isDark, setIsDark] = useState<boolean>(() => {
-    const saved = localStorage.getItem('theme');
-    if (saved) return saved === 'dark';
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved) return saved === 'dark';
+    } catch (e) {}
     return true;
   });
 
@@ -35,24 +37,32 @@ const App: React.FC = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [passInput, setPassInput] = useState("");
   
-  // التهيئة الأولية من LocalStorage لسرعة التحميل (مفتاح v14)، ثم التحديث من Firebase
+  // التهيئة الأولية من LocalStorage لسرعة التحميل (مفتاح v17)، ثم التحديث من Firebase
   const [menuData, setMenuData] = useState<MenuSectionType[]>(() => {
-    const saved = localStorage.getItem('atyab_menu_data_v14');
-    // تنظيف النسخ القديمة
-    localStorage.removeItem('atyab_menu_data');
-    localStorage.removeItem('atyab_menu_data_v2');
-    localStorage.removeItem('atyab_menu_data_v3');
-    localStorage.removeItem('atyab_menu_data_v4');
-    localStorage.removeItem('atyab_menu_data_v5');
-    localStorage.removeItem('atyab_menu_data_v6');
-    localStorage.removeItem('atyab_menu_data_v7');
-    localStorage.removeItem('atyab_menu_data_v8');
-    localStorage.removeItem('atyab_menu_data_v9');
-    localStorage.removeItem('atyab_menu_data_v10');
-    localStorage.removeItem('atyab_menu_data_v11');
-    localStorage.removeItem('atyab_menu_data_v12');
-    localStorage.removeItem('atyab_menu_data_v13');
-    return saved ? JSON.parse(saved) : MENU_DATA;
+    try {
+      const saved = localStorage.getItem('atyab_menu_data_v17');
+      // تنظيف النسخ القديمة
+      localStorage.removeItem('atyab_menu_data');
+      localStorage.removeItem('atyab_menu_data_v2');
+      localStorage.removeItem('atyab_menu_data_v3');
+      localStorage.removeItem('atyab_menu_data_v4');
+      localStorage.removeItem('atyab_menu_data_v5');
+      localStorage.removeItem('atyab_menu_data_v6');
+      localStorage.removeItem('atyab_menu_data_v7');
+      localStorage.removeItem('atyab_menu_data_v8');
+      localStorage.removeItem('atyab_menu_data_v9');
+      localStorage.removeItem('atyab_menu_data_v10');
+      localStorage.removeItem('atyab_menu_data_v11');
+      localStorage.removeItem('atyab_menu_data_v12');
+      localStorage.removeItem('atyab_menu_data_v13');
+      localStorage.removeItem('atyab_menu_data_v14');
+      localStorage.removeItem('atyab_menu_data_v15');
+      localStorage.removeItem('atyab_menu_data_v16');
+      return saved ? JSON.parse(saved) : MENU_DATA;
+    } catch (error) {
+      console.warn('Error accessing localStorage:', error);
+      return MENU_DATA;
+    }
   });
 
   const [activeSection, setActiveSection] = useState<string>('');
@@ -68,10 +78,10 @@ const App: React.FC = () => {
     const root = document.documentElement;
     if (isDark) {
       root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+      try { localStorage.setItem('theme', 'dark'); } catch (e) {}
     } else {
       root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      try { localStorage.setItem('theme', 'light'); } catch (e) {}
     }
   }, [isDark]);
 
@@ -82,7 +92,11 @@ const App: React.FC = () => {
       const data = snapshot.val();
       if (data) {
         setMenuData(data);
-        localStorage.setItem('atyab_menu_data_v14', JSON.stringify(data));
+        try {
+          localStorage.setItem('atyab_menu_data_v17', JSON.stringify(data));
+        } catch (error) {
+          console.warn('Failed to save menu data to localStorage:', error);
+        }
       } else {
         // إذا كانت قاعدة البيانات فارغة (مفتاح جديد)، قم برفع البيانات المحلية الحالية
         // هذا يضمن تحديث القاعدة بالأصناف والأسعار الجديدة تلقائياً
