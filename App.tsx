@@ -330,7 +330,7 @@ const App: React.FC = () => {
 
             <div className="flex flex-col items-center gap-4 opacity-95 transition-all text-center px-6">
                <a
-                  href="https://www.facebook.com/profile.php?id=61588482305662"
+                  href="https://www.facebook.com/ASNtechnology1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center group active:scale-95 transition-transform w-full max-w-[280px]"
